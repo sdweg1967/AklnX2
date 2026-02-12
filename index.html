@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО «АКАЛАН» – разработка сайтов для бизнеса</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ООО «АКАЛАН»",
+        "url": "https://akalan.ru",
+        "logo": "https://akalan.ru/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7-800-123-45-67",
+            "contactType": "customer service"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- ========== ШАПКА ========== -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">A</div>
+                    <span class="logo-text">АКАЛАН</span>
+                    <span class="logo-subtitle">ООО</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#services" class="nav-link">Услуги</a>
+                    <a href="#about" class="nav-link">О нас</a>
+                    <a href="#business" class="nav-link">О бизнесе</a>
+                    <a href="#faq" class="nav-link">Вопросы</a>
+                    <a href="#footer" class="nav-link">Контакты</a>
+                </div>
+                <button class="search-toggle" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn active">RU</button>
+                    <span class="lang-separator">|</span>
+                    <button class="lang-btn" id="enLangBtn">EN</button>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        <!-- Прогресс-бар чтения -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </header>
+
+    <!-- ========== ХЛЕБНЫЕ КРОШКИ ========== -->
+    <div class="breadcrumbs" id="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumb-list" id="breadcrumbList"></ul>
+        </div>
+    </div>
+
+    <!-- ========== ГЕРОЙ ========== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">ООО «АКАЛАН»</h1>
+                <p class="hero-subtitle">Разработка сайтов с онлайн-записью</p>
+                <p class="hero-description">Мы — молодая IT-компания из Нижнего Новгорода. Делаем быстрые, удобные и недорогие сайты для малого бизнеса. Первые проекты ведём с особым вниманием к качеству — растим репутацию.</p>
+                <button class="cta-button" id="appointmentBtn">
+                    <i class="fas fa-calendar-check"></i> Записаться на консультацию
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                    <div class="image-text">
+                        <h3>АКАЛАН</h3>
+                        <p>С нами вы достигаете большего</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== УСЛУГИ ========== -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <p class="section-subtitle">Честные цены, прозрачная разработка</p>
+            <div class="service-filter">
+                <button class="filter-btn active" data-filter="all">Все услуги</button>
+                <button class="filter-btn" data-filter="landing">Лендинг</button>
+                <button class="filter-btn" data-filter="corporate">Сайт компании</button>
+                <button class="filter-btn" data-filter="catalog">Каталог / Витрина</button>
+                <button class="filter-btn" data-filter="other">Другое</button>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-category="landing">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="service-title">Лендинг</h3>
+                    <p class="service-description">Одностраничный сайт для сбора заявок. Адаптивный, с формой обратной связи и вашим дизайном.</p>
+                    <div class="service-price">от 35 000 ₽</div>
+                </div>
+                <div class="service-card" data-category="corporate">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="service-title">Сайт компании</h3>
+                    <p class="service-description">Многостраничный сайт для бизнеса: услуги, портфолио, контакты, блог. Удобная админка.</p>
+                    <div class="service-price">от 70 000 ₽</div>
+                </div>
+                <div class="service-card" data-category="catalog">
+                    <div class="service-icon"><i class="fas fa-store"></i></div>
+                    <h3 class="service-title">Каталог / Витрина</h3>
+                    <p class="service-description">Сайт с каталогом товаров или услуг, фильтры, онлайн-запись, интеграция с соцсетями.</p>
+                    <div class="service-price">от 60 000 ₽</div>
+                </div>
+                <div class="service-card" data-category="other">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="service-title">Индивидуальная разработка</h3>
+                    <p class="service-description">Нестандартная задача? Рассчитаем и сделаем под ключ. Просто расскажите о проекте.</p>
+                    <div class="service-price">по запросу</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== О КОМПАНИИ ========== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">О нас</h2>
+                    <p class="about-description">ООО «АКАЛАН» зарегистрировано в 2023 году. Мы специализируемся на создании сайтов для малого и среднего бизнеса. Наш основатель — Алексей, техник-программист. Лично веду каждый проект от брифа до запуска.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="1">1+</div>
+                            <div class="stat-text">год на рынке</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0+</div>
+                            <div class="stat-text">завершённых проектов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="1">1+</div>
+                            <div class="stat-text">человек в команде</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="100">0%</div>
+                            <div class="stat-text">честность и открытость</div>
+                        </div>
+                    </div>
+                    <p class="about-mission">Наша миссия — помогать предпринимателям запускать качественные сайты без переплат. Прозрачно, надёжно, с душой.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="frame-content">
+                            <h4>Основатель</h4>
+                            <p>Алексей — техник-программист. 7 лет в веб-разработке.</p>
+                        </div>
+                    </div>
+                    <div class="presentation-block">
+                        <h3>Узнайте больше о наших возможностях</h3>
+                        <p>Скачайте презентацию компании с описанием услуг и портфолио.</p>
+                        <a href="#" class="cta-button" style="background: white; color: var(--primary-color); border: 2px solid var(--primary-color);">
+                            <i class="fas fa-file-pdf"></i> Скачать презентацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== О БИЗНЕСЕ ========== -->
+    <section class="business" id="business">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <p class="section-subtitle">Прозрачно и без сюрпризов</p>
+            <div class="business-features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3>Договор</h3>
+                    <p>Заключаем официальный договор, работаем как ООО, платим налоги. Вы получаете закрывающие документы.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-cubes"></i></div>
+                    <h3>Поэтапная оплата</h3>
+                    <p>Не просим 100% предоплату. Разбили проект на этапы — платите по мере готовности.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Поддержка после запуска</h3>
+                    <p>Месяц бесплатной техподдержки, дальше — по желанию. Не бросаем клиентов после сдачи.</p>
+                </div>
+            </div>
+            <div class="business-model">
+                <h3>Почему нам доверяют</h3>
+                <p>Мы не обещаем того, чего не можем сделать. Если проект сложный — честно скажем. Если подходит типовое решение — предложим его. Мы не накручиваем смету искусственно.</p>
+                <ul class="model-list">
+                    <li><i class="fas fa-check-circle"></i> Фиксированная смета или почасовая — выбираете вы</li>
+                    <li><i class="fas fa-check-circle"></i> Исходный код полностью ваш</li>
+                    <li><i class="fas fa-check-circle"></i> Работаем с НДС и без НДС</li>
+                    <li><i class="fas fa-check-circle"></i> Всегда на связи в Telegram</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== КОМАНДА (ЧЕСТНО: ОСНОВАТЕЛЬ) ========== -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title">Кто будет делать ваш проект</h2>
+            <p class="section-subtitle">Лично, без посредников</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Алексей Основатель"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Алексей</h3>
+                        <p class="team-position">Основатель, техник-программист</p>
+                        <p class="team-experience">Опыт: 7 лет</p>
+                        <div class="team-social">
+                            <a href="#" class="team-social-link"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="team-social-link"><i class="fab fa-vk"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ВАКАНСИИ (ЧЕСТНО) ========== -->
+    <section class="career" id="career">
+        <div class="container">
+            <h2 class="section-title">Карьера</h2>
+            <p class="section-subtitle">Растим команду постепенно</p>
+            <div class="career-content">
+                <div class="career-text">
+                    <p>Сейчас мы небольшая команда, но открыты к сотрудничеству с фрилансерами и стажёрами. Если вы разделяете наши ценности — напишите нам, обсудим.</p>
+                    <div class="benefits">
+                        <div class="benefit"><i class="fas fa-hand-holding-usd"></i><span>Оплата проектная или почасовая</span></div>
+                        <div class="benefit"><i class="fas fa-laptop"></i><span>Удалёнка</span></div>
+                        <div class="benefit"><i class="fas fa-graduation-cap"></i><span>Помощь в развитии</span></div>
+                    </div>
+                </div>
+                <div class="vacancies">
+                    <h3>Открыты к диалогу</h3>
+                    <div class="vacancy">
+                        <h4>Верстальщик / Frontend‑разработчик</h4>
+                        <p>Проектная работа, React/Vue не обязательны, главное — чистый CSS, JS, адаптив.</p>
+                    </div>
+                    <div class="vacancy">
+                        <h4>Менеджер проектов (стажёр)</h4>
+                        <p>Помощь в общении с клиентах, контроль сроков. Можно совмещать.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== НОВОСТИ / БЛОГ (ПЕРВЫЕ ЗАПИСИ) ========== -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Новости компании</h2>
+            <p class="section-subtitle">Как мы растем и развиваемся</p>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image"><img src="https://via.placeholder.com/400x250/f8f7ff/6A35FF?text=Запуск" alt="Новость"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> 12.02.2026</span>
+                            <span class="blog-category">Новости</span>
+                        </div>
+                        <h3 class="blog-title">Мы открылись!</h3>
+                        <p class="blog-excerpt">ООО «АКАЛАН» начало работу. Первые проекты уже в разработке.</p>
+                        <a href="#" class="blog-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image"><img src="https://via.placeholder.com/400x250/f8f7ff/6A35FF?text=Итоги" alt="Новость"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> 01.03.2026</span>
+                            <span class="blog-category">События</span>
+                        </div>
+                        <h3 class="blog-title">Готовим портфолио</h3>
+                        <p class="blog-excerpt">Скоро покажем первые работы. Следите за обновлениями.</p>
+                        <a href="#" class="blog-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== КЕЙСЫ (ПУСТО, НО СКОРО) ========== -->
+    <section class="cases" id="cases">
+        <div class="container">
+            <h2 class="section-title">Портфолио</h2>
+            <p class="section-subtitle">Здесь появятся ваши проекты</p>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image"><img src="https://via.placeholder.com/400x250/f8f7ff/6A35FF?text=Ваш+проект" alt="Ваш проект"></div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-tag">Скоро</span>
+                        </div>
+                        <h3 class="case-title">Ваш следующий проект</h3>
+                        <p class="case-description">Мы только начинаем, и ваше портфолио может стать нашим первым кейсом. Давайте сделаем его вместе!</p>
+                        <a href="#footer" class="case-link">Напишите нам <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <p class="section-subtitle">Ответы на самые популярные вопросы</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Сколько стоит сайт?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Цена зависит от сложности. Лендинг — от 35 000 ₽, корпоративный сайт — от 70 000 ₽. Точную смету составляем после брифа — бесплатно.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какие сроки?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Лендинг — 7–14 дней, корпоративный сайт — 20–30 дней. Можем сделать срочно за доплату.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Работаете с НДС?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы ООО на ОСНО, можем с НДС и без. Предоставляем закрывающие документы.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какая гарантия?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Гарантия на вёрстку и функционал — 3 месяца. Поддержка после запуска — первый месяц бесплатно.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== МОДАЛЬНОЕ ОКНО (ЗАПИСЬ) ========== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Записаться на консультацию</h3>
+                <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Оставьте контактные данные, и мы свяжемся с вами в течение 24 часов, чтобы обсудить проект и предварительную стоимость.</p>
+                <form class="appointment-form" id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Номер телефона *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Интересующая услуга</label>
+                        <select id="service">
+                            <option value="">Выберите услугу</option>
+                            <option value="landing">Лендинг</option>
+                            <option value="corporate">Сайт компании</option>
+                            <option value="catalog">Каталог / Витрина</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" rows="3" placeholder="Опишите кратко вашу задачу..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Отправить заявку
+                    </button>
+                    <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+                </form>
+                <div class="alternative-contact">
+                    <p>Или свяжитесь с нами напрямую:</p>
+                    <div class="contact-methods">
+                        <a href="mailto:akalan.HQ@yandex.ru" class="contact-method"><i class="fas fa-envelope"></i> akalan.HQ@yandex.ru</a>
+                        <a href="tel:+78001234567" class="contact-method"><i class="fas fa-phone"></i> +7 (800) 123-45-67</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ПОДВАЛ ========== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">A</div>
+                        <div class="footer-logo-text">
+                            <h3>ООО «АКАЛАН»</h3>
+                            <p>Разработка сайтов для бизнеса</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">Честно, прозрачно, с душой. Работаем по договору, платим налоги. Напишите нам — обсудим ваш проект.</p>
+                    <ul class="footer-links">
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#cases">Портфолио</a></li>
+                        <li><a href="#faq">Вопросы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Правовые документы</a></li>
+                        <li><a href="#">Договор-оферта</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#business">Как работаем</a></li>
+                        <li><a href="#career">Карьера</a></li>
+                        <li><a href="#blog">Новости</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <p>Телефон</p>
+                                <a href="tel:+78001234567">+7 (800) 123-45-67</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p>Почта</p>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <a href="mailto:akalan.HQ@yandex.ru" id="emailLink">akalan.HQ@yandex.ru</a>
+                                    <button class="copy-email-btn" id="copyEmailBtn" title="Скопировать email">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <p>График работы</p>
+                                <span>Пн-Пт: 9:00 – 18:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-row">
+                <div class="footer-legal">
+                    <span>&copy; 2023–2026 ООО «АКАЛАН». Все права защищены.</span>
+                    <a href="#">Политика конфиденциальности</a>
+                    <span class="ogrn">ОГРН 1234567890123</span>
+                    <span class="inn">ИНН 7712345678</span>
+                    <span class="kpp">КПП 771201001</span>
+                    <span class="okpo">ОКПО 12345678</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== COOKIE CONSENT ========== -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
+            <button class="cookie-btn" id="acceptCookies">Принять</button>
+        </div>
+    </div>
+
+    <!-- ========== ПЛАВАЮЩИЕ КНОПКИ ПОДЕЛИТЬСЯ ========== -->
+    <div class="share-buttons" id="shareButtons">
+        <div class="share-label">Поделиться</div>
+        <a href="#" class="share-btn vk" data-social="vk"><i class="fab fa-vk"></i></a>
+        <a href="#" class="share-btn telegram" data-social="telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="share-btn whatsapp" data-social="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- ========== КНОПКА ЗВОНКА (ТОЛЬКО МОБИЛЬНЫЕ) ========== -->
+    <a href="tel:+78001234567" class="call-button" id="callButton">
+        <i class="fas fa-phone-alt"></i>
+        <span class="call-tooltip">Позвонить</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
